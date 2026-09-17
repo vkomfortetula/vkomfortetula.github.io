@@ -1,47 +1,53 @@
 /* ==========================================================================
    Строительная компания «Вкомфорте» (г. Плавск)
-   Design System & Styling
+   White / Light Theme with Vibrant Orange Accents & Tabs
    ========================================================================== */
 
 :root {
-  /* Color Palette */
-  --bg-main: #0e1219;
-  --bg-surface: #151b26;
-  --bg-card: #1c2433;
-  --bg-card-hover: #232d3f;
-  --bg-light: #2c384d;
+  /* White & Light Color Palette */
+  --bg-main: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-surface-warm: #fff9f2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-light: #f1f5f9;
 
-  --accent-gold: #e59934;
-  --accent-gold-hover: #f3aa4b;
-  --accent-gold-glow: rgba(229, 153, 52, 0.25);
-  --accent-gold-subtle: rgba(229, 153, 52, 0.12);
+  /* Orange Accents & Tabs */
+  --accent-orange: #ff7b00;
+  --accent-orange-hover: #e56b00;
+  --accent-orange-active: #cc5e00;
+  --accent-orange-glow: rgba(255, 123, 0, 0.28);
+  --accent-orange-subtle: rgba(255, 123, 0, 0.1);
+  --accent-orange-border: rgba(255, 123, 0, 0.35);
 
-  --accent-blue: #3b82f6;
+  --accent-blue: #2563eb;
   --accent-green: #10b981;
   --accent-red: #ef4444;
 
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-dim: #6b7280;
-  --text-on-gold: #0b0f17;
+  /* Typography Colors */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #94a3b8;
+  --text-on-orange: #ffffff;
 
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(229, 153, 52, 0.5);
+  /* Borders & Shadows */
+  --border-subtle: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-focus: rgba(255, 123, 0, 0.5);
 
-  /* Typography */
   --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', cursive, sans-serif;
 
-  /* Shadows & Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-  --shadow-gold: 0 8px 25px rgba(229, 153, 52, 0.28);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.1);
+  --shadow-orange: 0 8px 25px rgba(255, 123, 0, 0.32);
 
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -63,7 +69,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-main);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -99,12 +105,11 @@ button, input, select, textarea {
   padding: 0 24px;
 }
 
-/* Glassmorphism utility */
+/* Glass & Card Utilities */
 .glass {
-  background: rgba(28, 36, 51, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
 }
 
 /* ==========================================================================
@@ -115,7 +120,7 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 14px 28px;
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -124,54 +129,57 @@ button, input, select, textarea {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #cf8528 100%);
-  color: var(--text-on-gold);
-  box-shadow: var(--shadow-gold);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #e66800 100%);
+  color: var(--text-on-orange);
+  box-shadow: var(--shadow-orange);
 }
 
 .btn--primary:hover {
-  background: linear-gradient(135deg, var(--accent-gold-hover) 0%, #e09432 100%);
+  background: linear-gradient(135deg, var(--accent-orange-hover) 0%, #cc5900 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(229, 153, 52, 0.38);
+  box-shadow: 0 12px 28px rgba(255, 123, 0, 0.42);
 }
 
 .btn--secondary {
-  background: var(--bg-light);
+  background: var(--bg-surface);
   color: var(--text-main);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid var(--border-subtle);
 }
 
 .btn--secondary:hover {
-  background: #384661;
+  background: #f1f5f9;
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
   transform: translateY(-2px);
 }
 
 .btn--outline {
   background: transparent;
   color: var(--text-main);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--border-medium);
 }
 
 .btn--outline:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
   transform: translateY(-2px);
 }
 
 .btn--outline-light {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
   color: var(--text-main);
 }
 
 .btn--outline-light:hover {
-  background: rgba(229, 153, 52, 0.15);
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: #ffffff;
 }
 
 .btn--sm {
-  padding: 8px 16px;
+  padding: 8px 18px;
   font-size: 0.875rem;
   border-radius: var(--radius-sm);
 }
@@ -190,35 +198,35 @@ button, input, select, textarea {
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
-  font-weight: 600;
-  padding: 6px 14px;
+  font-weight: 700;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
 }
 
 .badge--gold {
-  background: var(--accent-gold-subtle);
-  color: var(--accent-gold);
-  border: 1px solid rgba(229, 153, 52, 0.3);
+  background: var(--accent-orange-subtle);
+  color: var(--accent-orange);
+  border: 1px solid var(--accent-orange-border);
 }
 
 .badge--red {
-  background: rgba(239, 68, 68, 0.15);
-  color: #f87171;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .badge--green {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .badge__dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--accent-gold);
-  box-shadow: 0 0 10px var(--accent-gold);
+  background-color: var(--accent-orange);
+  box-shadow: 0 0 8px var(--accent-orange);
   animation: pulse 2s infinite;
 }
 
@@ -232,11 +240,11 @@ button, input, select, textarea {
    Header & Top Bar
    ========================================================================== */
 .top-bar {
-  background: #090c12;
+  background: #f8fafc;
   border-bottom: 1px solid var(--border-subtle);
   font-size: 0.8125rem;
   color: var(--text-muted);
-  padding: 8px 0;
+  padding: 9px 0;
 }
 
 .top-bar__inner {
@@ -254,7 +262,7 @@ button, input, select, textarea {
 }
 
 .top-bar__location svg, .top-bar__contacts svg {
-  color: var(--accent-gold);
+  color: var(--accent-orange);
 }
 
 .top-bar__phone {
@@ -262,21 +270,22 @@ button, input, select, textarea {
   align-items: center;
   gap: 6px;
   color: var(--text-main);
-  font-weight: 600;
+  font-weight: 700;
   margin-right: 12px;
 }
 
 .top-bar__phone:hover {
-  color: var(--accent-gold);
+  color: var(--accent-orange);
 }
 
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(14, 18, 25, 0.92);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 14px rgba(15, 23, 42, 0.05);
   transition: all var(--transition-fast);
 }
 
@@ -284,7 +293,7 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 98px;
 }
 
 .logo {
@@ -293,69 +302,64 @@ button, input, select, textarea {
   gap: 12px;
 }
 
-.logo__icon {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, var(--accent-gold), #b36e1b);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0b0f17;
-  box-shadow: var(--shadow-gold);
+.logo__img {
+  height: 74px;
+  max-width: 300px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
 }
 
-.logo__text {
-  display: flex;
-  flex-direction: column;
+.logo__img:hover {
+  transform: scale(1.02);
 }
 
-.logo__title {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--text-main);
+.logo__img--footer {
+  height: 82px;
+  max-width: 320px;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
 }
 
-.logo__subtitle {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent-gold);
-}
-
+/* Navigation Tabs (Вкладки меню) */
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 8px;
 }
 
 .nav__link {
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
   position: relative;
-  padding: 6px 0;
 }
 
-.nav__link:hover, .nav__link.active {
-  color: var(--text-main);
+.nav__link:hover {
+  color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
 }
 
-.nav__link::after {
+.nav__link.active {
+  color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
+  font-weight: 700;
+}
+
+.nav__link.active::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent-gold);
-  transition: width var(--transition-fast);
-}
-
-.nav__link:hover::after, .nav__link.active::after {
-  width: 100%;
+  left: 16px;
+  right: 16px;
+  height: 2.5px;
+  background: var(--accent-orange);
+  border-radius: 2px;
 }
 
 .header__actions {
@@ -375,36 +379,38 @@ button, input, select, textarea {
 
 .burger span {
   width: 26px;
-  height: 2px;
+  height: 2.5px;
   background: var(--text-main);
   border-radius: 2px;
   transition: var(--transition-fast);
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section (White / Light Background with Soft Orange Accents)
    ========================================================================== */
 .hero {
   position: relative;
-  padding: 100px 0 120px;
-  background: radial-gradient(circle at 80% 20%, rgba(229, 153, 52, 0.12) 0%, transparent 60%),
-              linear-gradient(180deg, #0e1219 0%, #131924 100%);
+  padding: 80px 0 100px;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 123, 0, 0.12) 0%, transparent 55%),
+              radial-gradient(circle at 10% 80%, rgba(255, 123, 0, 0.06) 0%, transparent 45%),
+              linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
   overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .hero__bg-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.7;
+  opacity: 0.35;
   pointer-events: none;
 }
 
 .hero__container {
   position: relative;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: 48px;
   align-items: center;
 }
@@ -413,19 +419,21 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 22px;
 }
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 3.1rem;
+  font-weight: 900;
   line-height: 1.18;
   letter-spacing: -0.02em;
+  color: var(--text-main);
 }
 
 .hero__title .highlight {
-  background: linear-gradient(135deg, var(--accent-gold) 0%, #f6c06a 100%);
+  color: var(--accent-orange);
+  background: linear-gradient(135deg, #ff7b00 0%, #e65c00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -433,20 +441,20 @@ button, input, select, textarea {
 .hero__subtitle {
   font-size: 1.15rem;
   color: var(--text-muted);
-  max-width: 580px;
-  line-height: 1.6;
+  max-width: 600px;
+  line-height: 1.65;
 }
 
 .hero__buttons {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .hero__stats {
   display: flex;
-  gap: 36px;
+  gap: 40px;
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--border-subtle);
@@ -460,20 +468,23 @@ button, input, select, textarea {
 
 .stat-item__num {
   font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--accent-gold);
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--accent-orange);
 }
 
 .stat-item__desc {
   font-size: 0.85rem;
   color: var(--text-muted);
+  font-weight: 500;
   max-width: 140px;
 }
 
 .hero-feature-card {
-  padding: 32px;
+  padding: 34px;
   border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
@@ -487,11 +498,11 @@ button, input, select, textarea {
 }
 
 .hero-feature-card__icon {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: var(--radius-md);
-  background: var(--accent-gold-subtle);
-  color: var(--accent-gold);
+  background: var(--accent-orange-subtle);
+  color: var(--accent-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -500,7 +511,8 @@ button, input, select, textarea {
 .hero-feature-card__header h4 {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-main);
 }
 
 .hero-feature-card__header p {
@@ -511,15 +523,16 @@ button, input, select, textarea {
 .hero-feature-card__badges {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .pill {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   padding: 10px 16px;
   border-radius: var(--radius-md);
   font-size: 0.9rem;
+  font-weight: 500;
   color: var(--text-main);
 }
 
@@ -527,7 +540,13 @@ button, input, select, textarea {
    Sections Common
    ========================================================================== */
 .section {
-  padding: 100px 0;
+  padding: 96px 0;
+}
+
+.section--alt {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .section-header {
@@ -543,11 +562,11 @@ button, input, select, textarea {
 
 .section-tag {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent-gold);
+  color: var(--accent-orange);
   margin-bottom: 12px;
 }
 
@@ -556,6 +575,7 @@ button, input, select, textarea {
   font-size: 2.35rem;
   font-weight: 800;
   line-height: 1.25;
+  color: var(--text-main);
   margin-bottom: 16px;
 }
 
@@ -574,8 +594,8 @@ button, input, select, textarea {
 }
 
 .service-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 36px 30px;
   display: flex;
@@ -583,6 +603,7 @@ button, input, select, textarea {
   transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .service-card::before {
@@ -591,16 +612,15 @@ button, input, select, textarea {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  height: 4px;
+  background: var(--accent-orange);
   opacity: 0;
   transition: opacity var(--transition-fast);
 }
 
 .service-card:hover {
   transform: translateY(-6px);
-  background: var(--bg-card);
-  border-color: rgba(229, 153, 52, 0.3);
+  border-color: var(--accent-orange);
   box-shadow: var(--shadow-md);
 }
 
@@ -609,11 +629,11 @@ button, input, select, textarea {
 }
 
 .service-card__icon {
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   border-radius: var(--radius-md);
-  background: var(--accent-gold-subtle);
-  color: var(--accent-gold);
+  background: var(--accent-orange-subtle);
+  color: var(--accent-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -624,6 +644,7 @@ button, input, select, textarea {
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 700;
+  color: var(--text-main);
   margin-bottom: 12px;
 }
 
@@ -640,7 +661,7 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--text-muted);
 }
 
@@ -653,35 +674,39 @@ button, input, select, textarea {
   content: '•';
   position: absolute;
   left: 4px;
-  color: var(--accent-gold);
-  font-size: 1.1rem;
+  color: var(--accent-orange);
+  font-size: 1.2rem;
   line-height: 1;
 }
 
 .service-card__link {
-  font-weight: 600;
-  color: var(--accent-gold);
-  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  font-size: 0.92rem;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
 .service-card__link:hover {
-  color: var(--accent-gold-hover);
+  color: var(--accent-orange-hover);
   text-decoration: underline;
 }
 
 /* ==========================================================================
-   Calculator Section
+   Calculator Section & ORANGE TABS (Вкладки калькулятора)
    ========================================================================== */
 .calculator-section {
-  background: linear-gradient(180deg, #131924 0%, #0e1219 100%);
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .calc-card {
   border-radius: var(--radius-lg);
   padding: 44px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
 }
 
@@ -704,11 +729,12 @@ button, input, select, textarea {
 }
 
 .calc-label {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   color: var(--text-main);
 }
 
+/* Orange Toggle Tabs (Оранжевые вкладки) */
 .toggle-group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -716,31 +742,33 @@ button, input, select, textarea {
 }
 
 .toggle-btn {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 2px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 14px 12px;
   text-align: center;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.92rem;
   color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .toggle-btn:hover {
-  border-color: rgba(229, 153, 52, 0.4);
-  color: var(--text-main);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
 }
 
+/* Active Orange Tab (Активная оранжевая вкладка) */
 .toggle-btn.active {
-  background: var(--accent-gold-subtle);
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-  box-shadow: 0 0 15px rgba(229, 153, 52, 0.2);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #e66800 100%);
+  border-color: var(--accent-orange);
+  color: #ffffff;
+  box-shadow: var(--shadow-orange);
 }
 
-/* Slider */
+/* Area Slider */
 .calc-range-header {
   display: flex;
   justify-content: space-between;
@@ -749,9 +777,9 @@ button, input, select, textarea {
 
 .calc-range-value {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--accent-gold);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--accent-orange);
 }
 
 .range-slider {
@@ -759,7 +787,7 @@ button, input, select, textarea {
   width: 100%;
   height: 8px;
   border-radius: 4px;
-  background: var(--bg-light);
+  background: var(--border-medium);
   outline: none;
   cursor: pointer;
   margin: 12px 0 6px;
@@ -771,9 +799,9 @@ button, input, select, textarea {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--accent-gold);
+  background: var(--accent-orange);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(229, 153, 52, 0.6);
+  box-shadow: var(--shadow-orange);
   transition: transform 0.1s;
 }
 
@@ -801,8 +829,8 @@ button, input, select, textarea {
   gap: 14px;
   padding: 16px;
   border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -815,7 +843,7 @@ button, input, select, textarea {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid var(--text-dim);
+  border: 2px solid var(--border-medium);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -825,7 +853,7 @@ button, input, select, textarea {
 }
 
 .option-radio input:checked + .option-radio__box {
-  border-color: var(--accent-gold);
+  border-color: var(--accent-orange);
 }
 
 .option-radio input:checked + .option-radio__box::after {
@@ -833,30 +861,31 @@ button, input, select, textarea {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--accent-gold);
+  background: var(--accent-orange);
 }
 
 .option-radio:has(input:checked) {
-  border-color: var(--accent-gold);
-  background: var(--accent-gold-subtle);
+  border-color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
 }
 
 .option-radio__content strong {
   display: block;
   font-size: 0.95rem;
+  color: var(--text-main);
   margin-bottom: 2px;
 }
 
 .option-radio__content small {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
 /* Summary Box */
 .calc-summary__box {
-  background: var(--bg-surface);
-  border: 1px solid rgba(229, 153, 52, 0.35);
+  background: #ffffff;
+  border: 2px solid var(--accent-orange);
   border-radius: var(--radius-lg);
   padding: 36px;
   display: flex;
@@ -864,26 +893,27 @@ button, input, select, textarea {
   gap: 16px;
   position: sticky;
   top: 100px;
+  box-shadow: var(--shadow-md);
 }
 
 .calc-summary__tag {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent-gold);
-  font-weight: 700;
+  color: var(--accent-orange);
+  font-weight: 800;
 }
 
 .calc-summary__total {
   font-family: var(--font-heading);
   font-size: 2.8rem;
   font-weight: 900;
-  color: #fff;
+  color: var(--text-main);
   line-height: 1.1;
 }
 
 .calc-summary__total .currency {
-  color: var(--accent-gold);
+  color: var(--accent-orange);
 }
 
 .calc-summary__item {
@@ -905,14 +935,15 @@ button, input, select, textarea {
 
 .calc-summary__form h5 {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text-main);
   margin-bottom: 14px;
 }
 
 .form-input {
   width: 100%;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-medium);
   border-radius: var(--radius-md);
   padding: 12px 16px;
   color: var(--text-main);
@@ -921,8 +952,8 @@ button, input, select, textarea {
 }
 
 .form-input:focus {
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 3px var(--accent-gold-glow);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px var(--accent-orange-glow);
 }
 
 .form-privacy {
@@ -934,7 +965,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Portfolio & Projects
+   Portfolio & ORANGE FILTER TABS (Оранжевые вкладки фильтра)
    ========================================================================== */
 .portfolio-filter {
   display: flex;
@@ -944,28 +975,34 @@ button, input, select, textarea {
   flex-wrap: wrap;
 }
 
+/* Orange Filter Tabs */
 .filter-btn {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 2px solid var(--border-subtle);
   border-radius: var(--radius-full);
-  padding: 10px 22px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  padding: 11px 24px;
+  font-weight: 700;
+  font-size: 0.92rem;
   color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .filter-btn:hover {
-  color: var(--text-main);
-  border-color: rgba(229, 153, 52, 0.4);
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
+  transform: translateY(-2px);
 }
 
+/* Active Orange Filter Tab */
 .filter-btn.active {
-  background: var(--accent-gold);
-  color: var(--text-on-gold);
-  border-color: var(--accent-gold);
-  box-shadow: var(--shadow-gold);
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #e66800 100%);
+  color: #ffffff;
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-orange);
+  transform: translateY(-2px);
 }
 
 .projects-grid {
@@ -975,45 +1012,48 @@ button, input, select, textarea {
 }
 
 .project-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(229, 153, 52, 0.35);
+  border-color: var(--accent-orange);
   box-shadow: var(--shadow-md);
 }
 
 .project-card__img-wrap {
   position: relative;
   height: 220px;
-  background: linear-gradient(135deg, #1f293d, #141b26);
+  background: linear-gradient(135deg, #f8fafc, #edf2f7);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .project-card__badge {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: var(--accent-gold);
-  color: var(--text-on-gold);
-  padding: 4px 12px;
+  background: var(--accent-orange);
+  color: #ffffff;
+  padding: 5px 14px;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   z-index: 2;
+  box-shadow: 0 4px 10px rgba(255, 123, 0, 0.3);
 }
 
-/* CSS Illustrated Architectural Mockups */
+/* Illustrated Mockups */
 .project-card__mockup {
   position: relative;
   width: 170px;
@@ -1025,14 +1065,14 @@ button, input, select, textarea {
   height: 0;
   border-left: 85px solid transparent;
   border-right: 85px solid transparent;
-  border-bottom: 50px solid #cf8528;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+  border-bottom: 50px solid var(--accent-orange);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
 }
 
 .mockup-roof--barn {
   border-left: 85px solid transparent;
   border-right: 85px solid transparent;
-  border-bottom: 65px solid #4b5563;
+  border-bottom: 65px solid #334155;
 }
 
 .mockup-walls {
@@ -1041,42 +1081,44 @@ button, input, select, textarea {
   left: 20px;
   width: 130px;
   height: 70px;
-  background: #e2e8f0;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
   border-radius: 2px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   padding: 8px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .project-card__mockup--2 .mockup-walls {
-  background: #b91c1c;
+  background: #fee2e2;
+  border-color: #fca5a5;
 }
 
 .project-card__mockup--3 .mockup-walls {
-  background: #334155;
+  background: #f1f5f9;
 }
 
 .mockup-window {
   width: 22px;
   height: 28px;
-  background: #93c5fd;
-  border: 2px solid #1e293b;
+  background: #fed7aa;
+  border: 2px solid var(--accent-orange);
   margin-bottom: 12px;
 }
 
 .mockup-window--panoramic {
   width: 50px;
   height: 52px;
-  background: #60a5fa;
-  border: 2px solid #0f172a;
+  background: #ffedd5;
+  border: 2px solid var(--accent-orange);
 }
 
 .mockup-door {
   width: 18px;
   height: 38px;
-  background: #78350f;
+  background: #9a3412;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
@@ -1098,16 +1140,18 @@ button, input, select, textarea {
 .project-card__title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-main);
 }
 
 .project-card__area {
   font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--accent-gold);
-  background: var(--accent-gold-subtle);
-  padding: 4px 10px;
+  font-weight: 800;
+  color: var(--accent-orange);
+  background: var(--accent-orange-subtle);
+  padding: 5px 12px;
   border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-orange-border);
 }
 
 .project-card__specs {
@@ -1135,13 +1179,19 @@ button, input, select, textarea {
 .project-card__price {
   font-family: var(--font-heading);
   font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--accent-gold);
+  font-weight: 900;
+  color: var(--accent-orange);
 }
 
 /* ==========================================================================
    Advantages & Process
    ========================================================================== */
+.advantages {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 .advantages__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1149,26 +1199,27 @@ button, input, select, textarea {
 }
 
 .adv-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 36px 30px;
   position: relative;
   overflow: hidden;
   transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
 }
 
 .adv-card:hover {
-  background: var(--bg-card);
   transform: translateY(-4px);
-  border-color: rgba(229, 153, 52, 0.4);
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-md);
 }
 
 .adv-card__num {
   font-family: var(--font-heading);
   font-size: 2.8rem;
   font-weight: 900;
-  color: rgba(229, 153, 52, 0.15);
+  color: rgba(255, 123, 0, 0.2);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -1176,7 +1227,8 @@ button, input, select, textarea {
 .adv-card__title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-main);
   margin-bottom: 12px;
 }
 
@@ -1195,8 +1247,8 @@ button, input, select, textarea {
 }
 
 .step-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 28px 20px;
   display: flex;
@@ -1204,31 +1256,35 @@ button, input, select, textarea {
   gap: 12px;
   position: relative;
   transition: transform var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .step-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-gold);
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-md);
 }
 
 .step-card__badge {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--accent-gold);
-  color: var(--text-on-gold);
+  background: linear-gradient(135deg, var(--accent-orange), #e66800);
+  color: #ffffff;
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(255, 123, 0, 0.35);
 }
 
 .step-card h4 {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-main);
 }
 
 .step-card p {
@@ -1246,6 +1302,9 @@ button, input, select, textarea {
   gap: 48px;
   border-radius: var(--radius-lg);
   padding: 48px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
 }
 
 .contacts-info {
@@ -1272,11 +1331,11 @@ button, input, select, textarea {
 }
 
 .contact-icon {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-md);
-  background: var(--accent-gold-subtle);
-  color: var(--accent-gold);
+  background: var(--accent-orange-subtle);
+  color: var(--accent-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1285,26 +1344,26 @@ button, input, select, textarea {
 
 .contact-detail-item strong {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   margin-bottom: 2px;
 }
 
 .contact-detail-item p, .contact-detail-item a {
   font-size: 1.05rem;
   color: var(--text-main);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .contact-detail-item a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-orange);
 }
 
 .contacts-form-box {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 36px;
 }
@@ -1312,7 +1371,8 @@ button, input, select, textarea {
 .form-title {
   font-family: var(--font-heading);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-main);
   margin-bottom: 8px;
 }
 
@@ -1329,7 +1389,8 @@ button, input, select, textarea {
 .form-group label {
   display: block;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--text-main);
   margin-bottom: 6px;
 }
 
@@ -1337,7 +1398,7 @@ button, input, select, textarea {
    Footer
    ========================================================================== */
 .footer {
-  background: #090c12;
+  background: #f8fafc;
   border-top: 1px solid var(--border-subtle);
   padding: 80px 0 30px;
 }
@@ -1358,20 +1419,21 @@ button, input, select, textarea {
 
 .footer__location-badge {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--accent-orange-subtle);
+  border: 1px solid var(--accent-orange-border);
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
-  color: var(--accent-gold);
+  color: var(--accent-orange);
 }
 
 .footer__heading {
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .footer__links {
@@ -1383,7 +1445,7 @@ button, input, select, textarea {
 }
 
 .footer__links a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-orange);
   transform: translateX(3px);
   display: inline-block;
 }
@@ -1400,7 +1462,7 @@ button, input, select, textarea {
 }
 
 .footer__contact-item a:hover {
-  color: var(--accent-gold);
+  color: var(--accent-orange);
 }
 
 .footer__bottom {
@@ -1442,7 +1504,8 @@ button, input, select, textarea {
 .modal__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
 }
 
 .modal__dialog {
@@ -1452,6 +1515,8 @@ button, input, select, textarea {
   max-width: 520px;
   border-radius: var(--radius-lg);
   padding: 36px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
   transform: scale(0.95);
   transition: transform 0.3s ease;
@@ -1472,7 +1537,7 @@ button, input, select, textarea {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-light);
   color: var(--text-main);
   display: flex;
   align-items: center;
@@ -1483,7 +1548,7 @@ button, input, select, textarea {
 }
 
 .modal__close:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #cbd5e1;
 }
 
 .modal__header {
@@ -1494,6 +1559,7 @@ button, input, select, textarea {
   font-family: var(--font-heading);
   font-size: 1.45rem;
   font-weight: 800;
+  color: var(--text-main);
   margin-bottom: 6px;
 }
 
@@ -1514,11 +1580,11 @@ button, input, select, textarea {
 }
 
 .toast {
-  background: #1e293b;
+  background: #0f172a;
   color: #fff;
   padding: 16px 22px;
   border-radius: var(--radius-md);
-  border-left: 4px solid var(--accent-gold);
+  border-left: 4px solid var(--accent-orange);
   box-shadow: var(--shadow-md);
   font-size: 0.9rem;
   display: flex;
@@ -1566,14 +1632,22 @@ button, input, select, textarea {
   .burger {
     display: flex;
   }
+  .header__inner {
+    height: 84px;
+  }
+  .logo__img {
+    height: 58px;
+    max-width: 220px;
+  }
   .nav {
     position: fixed;
-    top: 80px;
+    top: 84px;
     left: 0;
     right: 0;
-    background: var(--bg-surface);
+    background: #ffffff;
     border-bottom: 1px solid var(--border-subtle);
     padding: 24px;
+    box-shadow: var(--shadow-md);
     transform: translateY(-120%);
     transition: transform var(--transition-smooth);
   }
@@ -1583,10 +1657,10 @@ button, input, select, textarea {
   .nav__list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
   }
   .hero__title {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
   }
   .hero__stats {
     flex-direction: column;
